@@ -1,6 +1,7 @@
 # aws-terraform-ansible-lamp
 
 Cloud  : Amazon AWS Cloud
+
 Operating System used :  Amazon Linux
 
 
