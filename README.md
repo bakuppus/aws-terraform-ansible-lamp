@@ -4,6 +4,8 @@ Cloud  : Amazon AWS Cloud
 
 Operating System used :  Amazon Linux
 
+To run
+========
 
 Install Terraform 
 https://www.terraform.io/downloads.html
