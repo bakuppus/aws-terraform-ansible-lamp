@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  remote_user: ec2-user
+  sudo: yes
+  roles:
+   - install-apache
+   - install-db

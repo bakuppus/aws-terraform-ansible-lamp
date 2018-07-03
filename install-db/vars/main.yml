@@ -1,0 +1,4 @@
+---
+# vars file for install-db
+dbuser: ansible
+dbpassword: 12345

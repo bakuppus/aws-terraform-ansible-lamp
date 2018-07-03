@@ -1,0 +1,35 @@
+<html>
+<head>
+       <title>LAMP Automation Terraform  and  Ansible Demo</title>
+</head>
+<body>
+    <h3>
+        LAMP Automation Terraform  and  Ansible Demo . 
+        My IP Address is {{ ansible_eth0.ipv4.address }}. 
+        This is {{ ansible_system }} OS with {{ ansible_userspace_architecture }} architecture
+    </h3>
+  
+    <h4> 
+         Connecting to Database ...
+     </h4> 
+    
+    <p>
+        
+        <strong>List of Databases:</strong> <br/>
+    <?php 
+
+    //Spoiler: don't do this at home!
+    $dbobj = mysql_connect('{{ ansible_lo.ipv4.address }}', '{{ dbuser }}', '{{ dbpassword }}');
+    if (!$dbobj) { die('Could not connect: ' . mysql_error()); }
+
+    $result = mysql_query("SHOW DATABASES");
+    while ($res = mysql_fetch_assoc($result)){
+        echo $res['Database'] . "<br/>";
+    }
+
+    ?>
+    </p>
+    <br/>
+    <p><img src="https://www.devopsrunner.com.es/wp-content/uploads/2017/09/logo-50.png" alt="Ansible Terraform"></p>
+</body>
+</html>
