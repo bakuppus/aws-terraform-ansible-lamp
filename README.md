@@ -1,5 +1,9 @@
 # aws-terraform-ansible-lamp
 
+Cloud  : Amazon AWS Cloud
+Operating System used :  Amazon Linux
+
+
 Install Terraform 
 https://www.terraform.io/downloads.html
 
