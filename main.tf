@@ -11,7 +11,7 @@ resource "aws_instance" "ec2-lamp" {
     Name = "lamp-${var.name}"
   }
 
-
+#Install Ansible
 provisioner "file" {
     source      = "install_ansible.sh"
     destination = "/tmp/install_ansible.sh"
@@ -38,7 +38,7 @@ provisioner "remote-exec" {
   }
 }
 
-
+# Run Ansible Playbook
 provisioner "file" {
     source      = "."
     destination = "/home/ec2-user"
@@ -64,7 +64,7 @@ provisioner "remote-exec" {
 
 }
 
-
+#Create Security Group
 resource "aws_security_group" "lamp-sec-grp" {
   name        = "lamp Security Group"
   description = "lamp access"
@@ -106,6 +106,7 @@ resource "aws_security_group" "lamp-sec-grp" {
 
 }
 
+# Create Elastic Loadbalancer
 resource "aws_elb" "web" {
 name = "lamp-elb"
 
